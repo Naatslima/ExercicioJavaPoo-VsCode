@@ -1,39 +1,29 @@
-//escapsulamento
-class Animal {
-    private String nome;
+public class PilaresPoo {
+    public static void main(String[] args) {
+        Animal animal = new Animal("Animal", "Desconhecido", 0, "Não definida");
+        Passaro passaro = new Passaro("José", "Papagaio", 2, "Verde");
+        Cachorro cachorro = new Cachorro("Brutus", "Bulldog", 4, "Cinza");
+        
+        System.out.println("Informações do Animal:");
+        System.out.println("Nome: " + animal.getNome());
+        System.out.println("Raça: " + animal.getRaca());
+        System.out.println("Idade: " + animal.getIdade() + " anos");
+        System.out.println("Cor: " + animal.getCor());
 
-    public Animal(String nome) {
-        this.nome = nome;
-    }
+        System.out.println("\nRGA do Pet:");
+        System.out.println("Nome: " + passaro.getNome());
+        System.out.println("Raça: " + passaro.getRaca());
+        System.out.println("Idade: " + passaro.getIdade() + " anos");
+        System.out.println("Cor: " + passaro.getCor());
+        
+        System.out.println("\nRGA do Pet:");
+        System.out.println("Nome: " + cachorro.getNome());
+        System.out.println("Raça: " + cachorro.getRaca());
+        System.out.println("Idade: " + cachorro.getIdade() + " anos");
+        System.out.println("Cor: " + cachorro.getCor());
 
-    public String getNome() {
-        return nome;
-    }
-
-    //abstração
-    public void fazerSom() {
-        System.out.println("Todos os animais fazem sons.");
+        animal.fazerSom();
+        passaro.fazerSom();
+        cachorro.fazerSom();
     }
 }
-    //herança
-    class Cachorro extends Animal {
-        public Cachorro(String nome) {
-            super(nome);
-        }
-
-        @Override
-        public void fazerSom() {
-            //polimorfismo
-            System.out.println("\nO cachorro " + getNome() + " faz au au!!");
-        }
-    }
-
-    public class PilaresPoo {
-        public static void main(String[] args) {
-            Animal animal = new Animal("Animal");
-            Cachorro cachorro = new Cachorro("Brutus");
-
-            animal.fazerSom();
-            cachorro.fazerSom();
-        }
-    }
